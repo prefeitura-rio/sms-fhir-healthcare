@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="text-align:center">MANUAL DE INTEGRAÇÃO - CLOUD HEALTHCARE SMS</h1>
+
+<p>&nbsp;</p>
+
+<p style="text-align:center"><strong>HIST&Oacute;RICO DE REVIS&Otilde;ES</strong></p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width:500px">
+	<tbody>
+		<tr>
+			<td style="text-align:center">Data</td>
+			<td style="text-align:center">Vers&atilde;o</td>
+			<td style="text-align:center">Descri&ccedil;&atilde;o</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">25/07/2023</td>
+			<td style="text-align:center">1.0</td>
+			<td style="text-align:center">Elaborada primeira vers&atilde;o do documento (inser&ccedil;&atilde;o e remo&ccedil;&atilde;o)</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">&nbsp;</td>
+			<td style="text-align:center">&nbsp;</td>
+			<td style="text-align:center">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
+
+<p>&nbsp;</p>
+
+<p><strong>1. OBJETIVO</strong></p>
+
+<p style="margin-left:40px">Este documento tem o objetivo de orientar Estabelecimentos de Sa&uacute;de ou Empresas Privadas que fornecem solu&ccedil;&otilde;es/software na &aacute;rea de sa&uacute;de a utilizarem os servi&ccedil;os de&nbsp;Armazenamento FHIR (CLOUD HEALTHCARE SMS) que foi desenvolvido&nbsp;para a SMS &ndash; Secretaria Municipal de Sa&uacute;de do Rio de Janeiro, fornecendo as orienta&ccedil;&otilde;es t&eacute;cnicas necess&aacute;rias para a integra&ccedil;&atilde;o dos sistemas/solu&ccedil;&otilde;es locais com a rede.</p>
+
+<p><strong>2. MEIO DE INTEGRA&Ccedil;&Atilde;O</strong></p>
+
+<p style="margin-left:40px; text-align:justify">A integra&ccedil;&atilde;o com a CLOUD HEALTHCARE SMS dar-se-&aacute; por meio dos servi&ccedil;os&nbsp;mencionados acima. Seguindo as boas pr&aacute;ticas ser&atilde;o disponibilizados dois ambientes para a integra&ccedil;&atilde;o: homologa&ccedil;&atilde;o e produ&ccedil;&atilde;o.</p>
+
+<p style="margin-left:40px; text-align:justify"><strong>2.1. AMBIENTE DE HOMOLOGA&Ccedil;&Atilde;O</strong></p>
+
+<p style="margin-left:40px; text-align:justify">O ambiente de homologa&ccedil;&atilde;o tem como finalidade validar a integra&ccedil;&atilde;o, seus par&acirc;metros de entradas, sa&iacute;das e comportamentos negociais, permitindo a realiza&ccedil;&atilde;o de testes antes da efetiva comunica&ccedil;&atilde;o com o ambiente de produ&ccedil;&atilde;o. O&nbsp;endere&ccedil;o&nbsp;dos componentes de integra&ccedil;&atilde;o, no ambiente de homologa&ccedil;&atilde;o, &eacute;:</p>
+
+<p style="margin-left:40px; text-align:justify">https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_I</p>
+
+<p style="margin-left:40px; text-align:justify"><strong>2.2. AMBIENTE DE PRODU&Ccedil;&Atilde;O</strong></p>
+
+<p style="margin-left:40px; text-align:justify">O ambiente de produ&ccedil;&atilde;o &eacute; o ambiente est&aacute;vel e real que prov&ecirc; os servi&ccedil;os&nbsp;a serem consumidos.&nbsp; O&nbsp;endere&ccedil;o&nbsp;dos componentes de integra&ccedil;&atilde;o, no ambiente de produ&ccedil;&atilde;o, &eacute;:</p>
+
+<p style="margin-left:40px; text-align:justify">https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_I</p>
+
+<p style="margin-left:40px; text-align:justify">Verifique com a equipe&nbsp;da SMS as credenciais de acesso e os IDs necess&aacute;rios para integrar com o ambeinte de produ&ccedil;&atilde;o.</p>
+
+<p><strong>3. ACESSO AO SERVI&Ccedil;O</strong></p>
+
+<p style="margin-left:40px; text-align:justify">Para que seja poss&iacute;vel acessar os servi&ccedil;os disponibilizados no CLOUD HEALTHCARE SMS &eacute; necess&aacute;rio entrar em contato com a SMS para que possa ser enviado as credenciais de acesso.</p>
+
+<p style="text-align:justify"><strong>4. RESOURCES</strong></p>
+
+<p style="margin-left:40px; text-align:justify">Foi criado um o Projeto Rede Nacional de Dados em Sa&uacute;de (https://simplifier.net/RedeNacionaldeDadosemSaude), na plataforma SIMPLIFIER.NET, para a publica&ccedil;&atilde;o e distribui&ccedil;&atilde;o dos perfis relacionados aos documentos computacionais em produ&ccedil;&atilde;o na rede.</p>
+
+<p style="margin-left:40px; text-align:justify">Ser&aacute; possivel enviar informa&ccedil;&otilde;es de diversos resources para a CLOUD HEALTHCARE SMS, a lista completa de todos os resources suportados pela plataforma &eacute; listado a seguir contendo as regras de&nbsp;.</p>
+
+<p style="margin-left:40px; text-align:justify"><strong>4.1. PATIENT</strong></p>
+
+<p style="margin-left:40px; text-align:justify">Dados demogr&aacute;ficos sobre um indiv&iacute;duo enquanto sujeito de a&ccedil;&otilde;es e servi&ccedil;os de sa&uacute;de.</p>
+
+<p style="margin-left:40px; text-align:justify">No seguinte link pode ser encontrado o padr&atilde;o esperado para a integra&ccedil;&atilde;o</p>
+
+<p style="margin-left:40px; text-align:justify"><strong>https://simplifier.net/RedeNacionaldeDadosemSaude/BRIndividuo/~overview</strong></p>
+
+<p style="text-align:justify"><strong>5. OPERA&Ccedil;&Ocirc;ES</strong></p>
+
+<p style="margin-left:40px"><strong>5.1. INSER&Ccedil;&Atilde;O DE&nbsp;REGISTROS</strong></p>
+
+<p style="margin-left: 40px;">Para envio de resource do tipo patient, segue um exemplo utilizando requisi&ccedil;&atilde;o REST</p>
+
+<p style="margin-left: 40px;">curl -X POST \<br />
+&nbsp; &nbsp; -H &quot;Authorization: Bearer $(gcloud auth print-access-token)&quot; \<br />
+&nbsp; &nbsp; -H &quot;Content-Type: application/fhir+json&quot; \<br />
+&nbsp; &nbsp; -d @request.json \<br />
+&nbsp;&nbsp;&quot;https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient&quot;</p>
+
+<p style="margin-left:40px"><strong>5.2. EXCLUS&Atilde;O DE REGISTROS</strong></p>
+
+<p style="margin-left: 40px; text-align: justify;">O&nbsp;exemplo&nbsp;a seguir mostram como chamar o m&eacute;todo DELETE para excluir um recurso FHIR de patient. Independentemente de a opera&ccedil;&atilde;o ser bem-sucedida ou falhar, o servidor retorna um c&oacute;digo de status HTTP 200 OK. Para verificar se o recurso foi exclu&iacute;do com sucesso, procure ou obtenha o recurso e veja se ele existe. Segue um exemplo utilizando-se de requisi&ccedil;&atilde;o REST:</p>
+
+<p style="text-align: justify; margin-left: 40px;">curl -X DELETE \<br />
+&nbsp; &nbsp; -H &quot;Authorization: Bearer $(gcloud auth print-access-token)&quot; \<br />
+&nbsp; &nbsp; &quot;https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient/PATIENT_ID&quot;</p>
+
+<p><strong>6. PROJETO DE REFER&Ecirc;NCIA&nbsp;</strong></p>
+
+<p style="margin-left:40px">Foi disponibilizado um projeto de exemplo escrito em python e publicado atrav&eacute;s do Github. O projeto pode ser encontrado no seguinte link:</p>
+
+<p style="margin-left:40px">https://github.com/prefeitura-rio/sms-fhir-healthcare</p>
+
+<p>&nbsp;</p>
