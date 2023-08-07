@@ -144,7 +144,7 @@
                                     <div class="col-md-12 full">
                                         <hr>
                                         <div>
-                                            <p style="text-align:justify">Este documento tem o objetivo de orientar Estabelecimentos de Saúde ou Empresas Privadas que fornecem soluções/software na área de saúde a utilizarem os serviços de Armazenamento FHIR (CLOUD HEALTHCARE SMS) que foi desenvolvido para a SMS – Secretaria Municipal de Saúde do Rio de Janeiro, fornecendo as orientações técnicas necessárias para a integração dos sistemas/soluções locais com a rede. </p>
+                                            <p style="text-align:justify">Este documento tem o objetivo de orientar Estabelecimentos de Saúde ou Empresas Privadas que fornecem soluções/software na área de saúde a utilizarem os serviços de Armazenamento FHIR (CLOUD HEALTHCARE SMS) que foi desenvolvido pela SMS – Secretaria Municipal de Saúde do Rio de Janeiro, fornecendo as orientações técnicas necessárias para a integração dos sistemas/soluções locais com a rede. </p>
                                         </div>
                                     </div>
 
@@ -165,7 +165,7 @@
                                     <div class="col-md-12 full">
                                         <hr>
                                         <div>
-                                            <p style="text-align:justify">A integração com a CLOUD HEALTHCARE SMS dar-se-á por meio dos serviços mencionados acima. Seguindo as boas práticas serão disponibilizados dois ambientes para a integração: homologação e produção. </p>
+                                            <p style="text-align:justify">A integração com a CLOUD HEALTHCARE SMS dar-se-á por meio dos serviços mencionados abaixo. Seguindo as boas práticas serão disponibilizados dois ambientes para a integração: homologação e produção. </p>
                                         </div>
                                     </div>
 
@@ -237,13 +237,13 @@
                                 <div class="row">
 
                                     <div class="col-md-12 full">
-                                        <hr>
                                         <div>
-                                            <p style="text-align:justify">O CLOUD HEALTHCARE SMS segue os padrões definidos pelo projeto Rede Nacional de Dados em Saúde do SUS. Para informações detalhadas sobre a estrutura de dados, utilizar a documentação do projeto: </p>
-                                            
-                                            <p >https://simplifier.net/RedeNacionaldeDadosemSaude .</p>
-
-                                            <p style="text-align:justify">Será possivel enviar informações de diversos resources para a CLOUD HEALTHCARE SMS, a lista completa de todos os resources suportados pela plataforma é listado a seguir contendo as regras de integração. </p>
+                                            <p style="text-align:justify">O CLOUD HEALTHCARE SMS segue os padrões definidos pelo projeto Rede Nacional de Dados em Saúde do SUS. 
+                                                Para informações detalhadas sobre a estrutura de dados, utilizar a documentação oficial do projeto: <br/><br/>
+                                                <a href="https://rnds-fhir.saude.gov.br/">https://rnds-fhir.saude.gov.br</a><br/><br/>
+                                                 A relação completa de todos os resources suportados pela plataforma até o momento é listado a seguir contendo as regras de integração.
+                                            </p>
+                                            <hr>
                                         </div>
                                     </div>
 
@@ -257,11 +257,11 @@
 
                             <div class="col-md-12 left-align">
                                 <h4 id="line3_1">Patient</h4>
-                                <p>Dados demográficos sobre um indivíduo enquanto sujeito de ações e serviços de saúde.</p>
-
-                                <p>No seguinte link pode ser encontrado o padrão esperado para a integração</p>
-                                    
-                                <p>https://rnds-fhir.saude.gov.br/StructureDefinition-BRIndividuo-1.0.html</p>
+                                <p>Dados demográficos sobre um indivíduo enquanto sujeito de ações e serviços de saúde.<br>
+                                  Padrão esperado para integração: <br>
+                                    <a href="https://rnds-fhir.saude.gov.br/StructureDefinition-BRIndividuo-1.0.html">
+                                    https://rnds-fhir.saude.gov.br/StructureDefinition-BRIndividuo-1.0.html
+                                </a></p>
                             </div>
                             <!-- end col -->
                         </div>
@@ -283,14 +283,11 @@
                         <div class="row">
 
                             <div class="col-md-12 left-align">
-                                <h4 id="line4_1">Inserção de registros</h4>
-                                <p style="text-align:justify">Para envio de resource do tipo patient, segue um exemplo utilizando requisição REST</p>
+                                <h4 id="line4_1">Google Healthcare API</h4>
+                                <p style="text-align:justify">O Cloud Healthcare da SMS-RIO é construindo em cima do serviço Healthcare API do Google.
+                                Instruções detalhadas sobre como integrar podem ser encontrados na documentação oficial do serviço:<br>
+                            <a href="https://cloud.google.com/healthcare-api/docs/reference/rest">https://cloud.google.com/healthcare-api/docs/reference/rest</a></p>
 
-                                <p>  curl -X POST \ <br> 
-                                        -H "Authorization: Bearer $(gcloud auth print-access-token)" \ <br>
-                                        -H "Content-Type: application/fhir+json" \ <br>
-                                        -d @request.json \ <br>
-                                        "https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient"</p>
                             </div>
                             <!-- end col -->
                         </div>
@@ -301,36 +298,23 @@
                         <div class="row">
 
                             <div class="col-md-12 left-align">
-                                <h4 id="line4_2">Exclusão de registros</h4>
-                                <p style="text-align:justify">O exemplo a seguir mostram como chamar o método DELETE para excluir um recurso FHIR de patient. Independentemente de a operação ser bem-sucedida ou falhar, o servidor retorna um código de status HTTP 200 OK. Para verificar se o recurso foi excluído com sucesso, procure ou obtenha o recurso e veja se ele existe. Segue um exemplo utilizando-se de requisição REST:</p>
+                                <h4 id="line4_2">Biblioteca para facilitar a integração</h4>
+                                <p style="text-align:justify">
+                                    Disponibilizamos uma classe em Python para facilitar a integração com a API. Nela encontrarão a implementação das funções de CRUD (Create, Read, Update e Delete) para qualquer resouce do FHIR.
+                                     <b>Também encontrarão uma classe que permite ler e atualizar o Paciente pelo CPF.</b> <br><br>
+                                     <a href="https://github.com/prefeitura-rio/fhir-utils/blob/main/fhir_utils/healthcare_api.py">https://github.com/prefeitura-rio/fhir-utils/blob/main/fhir_utils/healthcare_api.py</a></p>
+                                    
+                                     <b>Parâmetros necessários:</b>
+                                    <pre class="brush: html">
+                                        PROJECT_ID = 'rj-sms-dev'
+                                        LOCATION = 'us-central1'
+                                        DATASET_ID = 'raw_layer' 
+                                        FHIR_STORE_ID = nome da empresa
+                                    </pre>
+                                    <b>Autenticação </b><br>
+                                    Para autenticação é necessária uma variável de ambiente chamada <b>GOOGLE_APPLICATION_CREDENTIALS</b> contendo o path para as credenciais em json recebidas através da Secretaria de Saúde.
 
-                                <p > curl -X DELETE \ <br>
-                                        -H "Authorization: Bearer $(gcloud auth print-access-token)" \ <br>
-                                        "https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient/PATIENT_ID"</p>
-
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                    </section>
-                    <!-- end section -->
-
-                    <section id="line5" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Projeto de referência <hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p style="text-align:justify">Foi disponibilizado um projeto de exemplo escrito em python e publicado através do Github. O projeto pode ser encontrado no seguinte link:</p>
-
-                                <p> https://github.com/prefeitura-rio/sms-fhir-healthcare</p>
+                                </p>
 
                             </div>
                             <!-- end col -->
@@ -356,11 +340,12 @@
                                 <h4>Changelog</h4>
 
                                 <pre class="brush: html">
-
+                                    
                                         -----------------------------------------------------------------------------------------
                                         Version 1.0.1 - 7 de agosto, 2023
                                         -----------------------------------------------------------------------------------------
                                         - aprimoramento visual da documentação
+                                        - adicionada sessão sobre classe em Python para integração com api
 
 
                                         -----------------------------------------------------------------------------------------
