@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>Documentação CLOUD HEALTHCARE SMS</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#mode').addEventListener('click',()=>{
+                document.querySelector('html').classList.toggle('dark');
+            })
+        });
+
+
+    </script>
+
+    <div id="wrapper">
+
+        <div id="mode" >
+            <div class="dark">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>lightmode</title>
+                    <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                </svg>
+            </div>
+            <div class="light">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>darkmode</title>
+                    <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Manual de Integração - CLOUD HEALTHCARE SMS </h1>
+                            <p class="lead">Versão 1.0.1</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#line1">Meio de Integração</a>
+                                <ul class="nav">
+                                    <li><a href="#line1_1">Ambiente de Homologação</a></li>
+                                    <li><a href="#line1_2">Ambiente de Produção</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line2">Acesso ao Serviço</a></li>
+                            <li><a href="#line3">Resources</a>
+                                <ul class="nav">
+                                    <li><a href="#line3_1">Patient</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line4">Operações</a>
+                                <ul class="nav">
+                                    <li><a href="#line4_1">Inserção de Registros</a></li>
+                                    <li><a href="#line4_2">Exclusão de Registros</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line5">Projeto de Referência</a></li>
+                            <li><a href="#line6">Histórico de Versão</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                               <h2 class="dark-text">Objetivo<hr></h2>
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <hr>
+                                        <div>
+                                            <p style="text-align:justify">Este documento tem o objetivo de orientar Estabelecimentos de Saúde ou Empresas Privadas que fornecem soluções/software na área de saúde a utilizarem os serviços de Armazenamento FHIR (CLOUD HEALTHCARE SMS) que foi desenvolvido para a SMS – Secretaria Municipal de Saúde do Rio de Janeiro, fornecendo as orientações técnicas necessárias para a integração dos sistemas/soluções locais com a rede. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="line1" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Meio de Integração <hr></h2>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <hr>
+                                        <div>
+                                            <p style="text-align:justify">A integração com a CLOUD HEALTHCARE SMS dar-se-á por meio dos serviços mencionados acima. Seguindo as boas práticas serão disponibilizados dois ambientes para a integração: homologação e produção. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+
+                            <div class="col-md-12 left-align">
+                                <h4 id="line1_1">Ambiente de Homologação</h4>
+                                <p style="text-align:justify">O ambiente de homologação tem como finalidade validar a integração, seus parâmetros de entradas, saídas e comportamentos negociais, permitindo a realização de testes antes da efetiva comunicação com o ambiente de produção. O endereço dos componentes de integração, no ambiente de homologação, é:</p>
+
+                                <p>https://healthcare.googleapis.com/v1/projects/rj-sms-dev/locations/us-central1/datasets/raw_layer/fhirStores/FHIR_STORE_ID</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <hr>
+
+                        <div class="row">
+
+                            <div class="col-md-12 left-align">
+                                <h4 id="line1_2">Ambiente de Produção</h4>
+                                <p style="text-align:justify">O ambiente de produção é o ambiente estável e real que provê os serviços a serem consumidos.  O endereço dos componentes de integração, no ambiente de produção, é:</p>
+
+                                <p>https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_I</p>
+                                    
+                                <p style="text-align:justify">Verifique com a equipe da SMS as credenciais de acesso e os IDs necessários para integrar com o ambiente de produção.</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line2" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Acesso ao Serviço <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="text-align:justify">Para que seja possível acessar os serviços disponibilizados no CLOUD HEALTHCARE SMS é necessário entrar em contato com a SMS para que possa ser enviado as credenciais de acesso.</p>
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line3" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Resources <hr></h2>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <hr>
+                                        <div>
+                                            <p style="text-align:justify">O CLOUD HEALTHCARE SMS segue os padrões definidos pelo projeto Rede Nacional de Dados em Saúde do SUS. Para informações detalhadas sobre a estrutura de dados, utilizar a documentação do projeto: </p>
+                                            
+                                            <p >https://simplifier.net/RedeNacionaldeDadosemSaude .</p>
+
+                                            <p style="text-align:justify">Será possivel enviar informações de diversos resources para a CLOUD HEALTHCARE SMS, a lista completa de todos os resources suportados pela plataforma é listado a seguir contendo as regras de integração. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+
+                            <div class="col-md-12 left-align">
+                                <h4 id="line3_1">Patient</h4>
+                                <p>Dados demográficos sobre um indivíduo enquanto sujeito de ações e serviços de saúde.</p>
+
+                                <p>No seguinte link pode ser encontrado o padrão esperado para a integração</p>
+                                    
+                                <p>https://rnds-fhir.saude.gov.br/StructureDefinition-BRIndividuo-1.0.html</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+                    <section id="line4" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Operações <hr></h2>
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+
+                            <div class="col-md-12 left-align">
+                                <h4 id="line4_1">Inserção de registros</h4>
+                                <p style="text-align:justify">Para envio de resource do tipo patient, segue um exemplo utilizando requisição REST</p>
+
+                                <p>  curl -X POST \ <br> 
+                                        -H "Authorization: Bearer $(gcloud auth print-access-token)" \ <br>
+                                        -H "Content-Type: application/fhir+json" \ <br>
+                                        -d @request.json \ <br>
+                                        "https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient"</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <hr>
+
+                        <div class="row">
+
+                            <div class="col-md-12 left-align">
+                                <h4 id="line4_2">Exclusão de registros</h4>
+                                <p style="text-align:justify">O exemplo a seguir mostram como chamar o método DELETE para excluir um recurso FHIR de patient. Independentemente de a operação ser bem-sucedida ou falhar, o servidor retorna um código de status HTTP 200 OK. Para verificar se o recurso foi excluído com sucesso, procure ou obtenha o recurso e veja se ele existe. Segue um exemplo utilizando-se de requisição REST:</p>
+
+                                <p > curl -X DELETE \ <br>
+                                        -H "Authorization: Bearer $(gcloud auth print-access-token)" \ <br>
+                                        "https://healthcare.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/datasets/DATASET_ID/fhirStores/FHIR_STORE_ID/fhir/Patient/PATIENT_ID"</p>
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line5" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Projeto de referência <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="text-align:justify">Foi disponibilizado um projeto de exemplo escrito em python e publicado através do Github. O projeto pode ser encontrado no seguinte link:</p>
+
+                                <p> https://github.com/prefeitura-rio/sms-fhir-healthcare</p>
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line6" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Histórico de Versão (Changelog) <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h4>Changelog</h4>
+
+                                <pre class="brush: html">
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 1.0.1 - 7 de agosto, 2023
+                                        -----------------------------------------------------------------------------------------
+                                        - aprimoramento visual da documentação
+
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 1.0.0 - 25 de julho, 2023
+                                        -----------------------------------------------------------------------------------------
+                                        - primeira versão do documento 
+                                        - definição do objeto Patient
+                                        - definido o método de inserção do objeto Patient
+                                        - definido o método de exclusão do objeto Patient
+
+
+                                      </pre>
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>
